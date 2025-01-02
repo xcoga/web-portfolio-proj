@@ -136,6 +136,19 @@ export default {
 </script>
 
 <style>
+@media (min-width: 1025px){
+  .projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%; /* Adjusted width to 90% of viewport width for smaller screens */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    height: auto; /* Adjust height dynamically */
+    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+    flex-direction: column; /* Stack items vertically for smaller screens */
+  }
+}
 
 @media (max-width: 1024px) {
   /* Container for the projects section */
@@ -201,6 +214,7 @@ export default {
     margin-bottom: 15px;
   }
 }
+
 
 /* Content wrapper */
 .content {
