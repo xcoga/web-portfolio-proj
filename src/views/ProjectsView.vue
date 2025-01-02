@@ -136,17 +136,70 @@ export default {
 </script>
 
 <style>
-/* Container for the projects section */
-.projects {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  width: 45vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
 
-  /* box-sizing: border-box; Ensure padding is included in width/height */
-  overflow-y: auto; /* Allow scrolling if content overflows */
+@media (max-width: 1024px) {
+  /* Container for the projects section */
+  .projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 90vw; /* Adjusted width to 90% of viewport width for smaller screens */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    height: auto; /* Adjust height dynamically */
+    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+    flex-direction: column; /* Stack items vertically for smaller screens */
+  }
+
+  /* Content wrapper */
+  .content {
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Scrollable list container */
+  .scrollable-list {
+    max-height: 600px;
+    overflow-y: auto;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  /* Individual project item */
+  .project-item {
+    margin-bottom: 20px;
+    min-height: 400px;
+    max-height: none;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure the items take full width of their container */
+  }
+
+  /* Project image */
+  .project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+
+  /* Project video */
+  .project-video iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  /* Optional: Adjust the margin-bottom of the project items for smaller screens */
+  .project-item {
+    margin-bottom: 15px;
+  }
 }
 
 /* Content wrapper */
@@ -160,15 +213,18 @@ export default {
 .scrollable-list {
   max-height: 600px; /* Increased height */
   overflow-y: auto;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 8px;
   padding: 10px;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 
 /* Individual project item */
 .project-item {
   margin-bottom: 30px;
+  min-height: 400px;
+  max-height: none;
+  /* max-height: 900px; */
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -179,15 +235,16 @@ export default {
 /* Project image */
 .project-image img {
   width: 100%; /* Increased width to match container */
-  height: auto;
+  height: auto; /* Maintain the aspect ratio */
   border-radius: 5px;
   margin-bottom: 10px;
+  object-fit: cover; /* or 'contain' depending on the desired effect */
 }
 
 /* Project video */
 .project-video iframe {
   width: 100%; /* Increased width to match container */
-  height: 400px; /* Increased height for better visibility */
+  height: 300px; /* Increased height for better visibility */
   border-radius: 5px;
   margin-top: 10px;
 }

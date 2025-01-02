@@ -1,6 +1,7 @@
 <template>
   <div class="projects">
-    <ul class="project-list">
+    <ul class="scrollable-list">
+    <!-- <ul class="project-list"> -->
       <li class="project-item" v-for="(item, index) in items" :key="index">
         <!-- Top Section: Icon + Title + Description -->
         <div class="project-header">
@@ -94,7 +95,15 @@ h1 {
   padding: 0;
   margin: 0;
 }
-
+/* Scrollable list container */
+.scrollable-list {
+  max-height: 600px; /* Increased height */
+  overflow-y: auto;
+  /* border: 1px solid #ccc; */
+  border-radius: 8px;
+  padding: 10px;
+  /* background-color: #f9f9f9; */
+}
 .project-item {
   margin-bottom: 3rem;
   padding: 1.5rem;

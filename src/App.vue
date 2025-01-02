@@ -12,7 +12,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <!-- <HelloWorld msg="You did it!" /> -->
       <div>
         <img src="@/assets/doggo.jpg" alt="profile pic" class="doggo"/>
-        <text class="styled-text">Of course, this isn't me...<br> Welcome to my portfolio app!</text>
+        <text class="styled-text">Welcome to my portfolio app!</text>
       </div>
       
 
@@ -21,22 +21,32 @@ import HelloWorld from './components/HelloWorld.vue'
           <li>
             <RouterLink to="/">
               Home
+              <img src="@/assets/home.svg" alt="Home" class="icon" />
             </RouterLink>
-            <img src="@/assets/home.svg" alt="Home" class="icon" />
+            
           </li>
           <li>
-            <RouterLink to="/about">About</RouterLink>
-            <img src="@/assets/profile-2.svg" alt="About" class="icon" />
-          </li>
-
-          <li>
-            <RouterLink to="/projects">Projects</RouterLink>
-            <img src="@/assets/folder.svg" alt="Projects" class="icon" />
+            <RouterLink to="/about">
+               About
+              <img src="@/assets/profile-2.svg" alt="About" class="icon" />
+            </RouterLink>
+            
           </li>
 
           <li>
-            <RouterLink to="/interests">Interests</RouterLink>
-            <img src="@/assets/music.svg" alt="Interests" class="icon" />
+            <RouterLink to="/projects">
+              Projects
+              <img src="@/assets/folder.svg" alt="Projects" class="icon" />
+            </RouterLink>
+            
+          </li>
+
+          <li>
+            <RouterLink to="/interests">
+              Interests
+              <img src="@/assets/music.svg" alt="Interests" class="icon" />
+            </RouterLink>
+            
           </li>
 
         </ul>
@@ -52,7 +62,6 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 3s ease;
@@ -63,23 +72,9 @@ import HelloWorld from './components/HelloWorld.vue'
   opacity: 0;
 }
 
-
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
 .styled-text {
   font-size: 20px;
   color: green;
-
-}
-
-.doggo {
-  max-height: 400px;
-  border:5px solid green; /* Specifies width, style, and color */
-  border-radius: 20px; /* add curves */
 }
 
 .logo {
@@ -87,63 +82,60 @@ header {
   margin: 0 auto 2rem;
 }
 
-nav {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 2rem;
-  /* Add space to the right */
+@media (max-width: 1024px){
+  .doggo {
+    display: none;
+  }
+  .styled-text {
+    display: none;
+  }
+  .icon {
+    height: 2rem;
+    width: auto;
+  }
+
+  router-view {
+    display: block;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: fit-content;    
+  }
+
+  /* Make nav items appear in a row */
+  nav ul {
+    display: flex;
+    flex-direction: row; /* Set flex direction to row for smaller screens */
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Remove bullet points */
+    justify-content: center; /* Center the items horizontally */
+  }
+
+  nav li {
+    display: inline-block; /* Align items in a row */
+    margin-right: 2rem; /* Add spacing between items */
+  }
+
+  /* Optional: Adjust icon size for smaller screens */
+  nav .icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 0.5rem;
+  }
 }
-
-nav ul {
-  display: flex;
-  flex-direction: column;
-  font-size:30px;
-  padding: 0;
-  margin: 0;
-  list-style-type: none; /* Removes the default bullet points */
-}
-
-nav li {
-  display: flex; /* Use flex to align RouterLink and image side by side */
-  align-items: center; /* Vertically align the items */
-  margin-bottom: 5rem; /* Add spacing between items */
-}
-
-nav .icon {
-  width: 40px; /* Adjust the icon size */
-  height: 40px; /* Adjust the icon size */
-  margin-left: 0.5rem; /* Add space between text and icon */
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 2rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-
 
 @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
-    padding-right:60px;
-    /* padding-right: calc(var(--section-gap) / 2); */
+    padding-right: 60px;
   }
 
-
+  .doggo {
+    max-height: 400px;
+    border: 5px solid green;
+    border-radius: 20px;
+  }
 
   .logo {
     margin: 0 2rem 0 0;
@@ -151,20 +143,49 @@ nav a:first-of-type {
 
   header .wrapper {
     display: flex;
-    align-items: center; /* Vertically align the items */
-    justify-content: space-between; /* Space out elements in the row */
-    width: 100%; /* Ensure it takes full width */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   nav {
-    margin-top: 0; /* Remove margin-top to align it properly */
-    margin-left: 2rem; /* Increase margin-left to push nav to the right */
-    text-align: left;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  nav li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  nav .icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 0.5rem;
+  }
+
+  nav a.router-link-exact-active {
+    color: var(--color-text);
+  }
+
+  nav a.router-link-exact-active:hover {
+    background-color: transparent;
   }
 
   nav a {
     display: inline-block;
-    padding: 0 1rem; /* Adjust padding for better spacing */
+    padding: 0 2rem;
     border-left: 1px solid var(--color-border);
   }
 
@@ -173,3 +194,4 @@ nav a:first-of-type {
   }
 }
 </style>
+
