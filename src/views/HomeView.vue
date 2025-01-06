@@ -3,7 +3,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-  
+
   <main class="introduction">
     Welcome to my portfolio app! This is a simple app built using vue.JS and Vite. <br><br>
     This will be part of a series of projects I will be doing within this semester to further upgrade myself with the necessary skills
@@ -39,7 +39,6 @@ import TheWelcome from '../components/TheWelcome.vue'
     display: flex;
     align-items: center;
     justify-content: center; /* Center text horizontally if needed */
-    font-family: "Garamond", 'Franklin Gothic', sans-serif;
     font-size: 25px;
     padding: 20px; /* Add some padding to ensure text doesn't touch edges */
     flex-direction: column; /* Make text stack vertically */
@@ -55,7 +54,7 @@ import TheWelcome from '../components/TheWelcome.vue'
     display: flex;
     justify-content: center; /* Centers the text horizontally */
     align-items: center; /* Centers the text vertically */
-    font-family: "Garamond", 'Franklin Gothic', sans-serif;
+    font-family:"Sour Gummy", "Garamond", 'Franklin Gothic', sans-serif;
     font-size: 25px;
     padding: 20px;
     flex-direction: column; /* Ensures the text stays in a vertical layout */

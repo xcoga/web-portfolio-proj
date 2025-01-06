@@ -4,6 +4,9 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
   <header>
 
@@ -55,13 +58,16 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <Transition name="fade" mode="out-in">
-    <RouterView />
+    <RouterView class="router-view"/>
   </Transition>
 
   
 </template>
 
 <style scoped>
+.router-view{
+  font-family: "Sour Gummy", serif;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 2s ease;
@@ -73,8 +79,8 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 
 .styled-text {
-  font-size: 20px;
-  font-family: "Lucida Handwriting", 'Franklin Gothic', sans-serif;
+  font-size: 40px;
+  font-family: "Lavishly Yours", serif;
   color: green;
 }
 

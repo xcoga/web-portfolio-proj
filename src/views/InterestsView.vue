@@ -1,4 +1,5 @@
 <template>
+
   <div class="projects">
     <ul class="scrollable-list">
     <!-- <ul class="project-list"> -->
