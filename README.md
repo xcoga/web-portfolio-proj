@@ -1,3 +1,8 @@
+# Web-portofolio-App
+
+This is a web application developed using Vue.js and Vite. The application contains a brief introduction of myself, youtube demos
+of my past projects and my interests.
+
 # vue-project-2
 
 This template should help get you started developing with Vue 3 in Vite.
