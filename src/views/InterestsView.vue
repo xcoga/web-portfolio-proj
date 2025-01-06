@@ -51,7 +51,8 @@ export default {
           with Kindai University, one of the top bands in Osaka!',
           videoUrl: 'https://www.youtube.com/embed/LmDL71CzTJs',
           
-          image: "src/assets/japan_kindai.jpg",
+          image: "/japan_kindai.jpg",
+          // image: 'D:/coding_projs/web-portfolio-proj/src/assets/japan_kindai.jpg'
         },
         {
           icon: musicIcon,

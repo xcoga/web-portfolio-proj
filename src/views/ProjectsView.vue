@@ -114,7 +114,7 @@ export default {
 
           This project has taught me to be more careful in the dataset preprocessing stage, to not lose out important features needed\
           to improve the machine learning model.`,
-          image: "src/assets/titanic_kaggle_leaderboard.png",
+          image: "/titanic_kaggle_leaderboard.png",
           videoUrl: "",
         },
 
