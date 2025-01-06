@@ -35,6 +35,15 @@ export default {
     return {
       projects: [
         {
+          id: 6,
+          title: "Hospital Management System",
+          description: `A C# project using the .Net framework. This is a Windows Form Application project. Doctors can update
+          , delete, and add new doctor accounts. Doctors can add, update and delete patients. Doctors can add, update, delete and print
+          medical diagnosis. The application is linked to a Microsoft SQL server for all of these operations.`,
+          image: "",
+          videoUrl: "https://www.youtube.com/embed/wCDVEmNJTgU",
+        },
+        {
           id: 1,
           title: "Social Cycling Application",
           description: `This is an application developed using Android Studio and linked to Firebase as our backend.\
@@ -117,6 +126,8 @@ export default {
           image: "",
           videoUrl: "https://www.youtube.com/embed/trzJMfDl2DQ",
         },
+
+
 
 
         

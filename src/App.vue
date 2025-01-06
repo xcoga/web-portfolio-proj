@@ -11,7 +11,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <div class="wrapper">
       <!-- <HelloWorld msg="You did it!" /> -->
       <div>
-        <img src="@/assets/doggo.jpg" alt="profile pic" class="doggo"/>
+        <img src="@/assets/me.jpg" alt="profile pic" class="profile-pic"/>
         <text class="styled-text">Welcome to my portfolio app!</text>
       </div>
       
@@ -64,7 +64,7 @@ import HelloWorld from './components/HelloWorld.vue'
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 3s ease;
+  transition: opacity 2s ease;
 }
 
 .fade-enter-from,
@@ -74,6 +74,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 .styled-text {
   font-size: 20px;
+  font-family: "Lucida Handwriting", 'Franklin Gothic', sans-serif;
   color: green;
 }
 
@@ -83,7 +84,7 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 
 @media (max-width: 1024px){
-  .doggo {
+  .profile-pic {
     display: none;
   }
   .styled-text {
@@ -131,11 +132,15 @@ import HelloWorld from './components/HelloWorld.vue'
     padding-right: 60px;
   }
 
-  .doggo {
-    max-height: 400px;
-    border: 5px solid green;
-    border-radius: 20px;
+  .profile-pic {
+  width: 400px; /* Set a fixed width */
+  height: 400px; /* Set the same height to make it square */
+  border: 5px solid green;
+  border-radius: 20px;
+  object-fit: cover; /* This ensures the image covers the square and gets cropped */
   }
+
+
 
   .logo {
     margin: 0 2rem 0 0;
