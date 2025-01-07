@@ -26,7 +26,7 @@ import TheWelcome from '../components/TheWelcome.vue'
   border-radius: 50%; /* Make the profile picture circular */
 }
 
-@media (max-width: 768px){
+@media (max-width: 550px){
   .introduction {
     display: flex;
     align-items: center;
@@ -44,6 +44,27 @@ import TheWelcome from '../components/TheWelcome.vue'
     width: 100%; /* Ensure the container takes full width */
     height: 55vh; /* Adjust height as needed */
     margin-top: -10vw; 
+  }  
+}
+
+@media (min-width: 550px) and (max-width: 768px){
+  .introduction {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally if needed */
+    font-family:"Sour Gummy", "Garamond", 'Franklin Gothic', sans-serif;
+    font-size: 25px;
+    padding: 20px; /* Add some padding to ensure text doesn't touch edges */
+    flex-direction: column; /* Make text stack vertically */
+    /* margin-bottom: 5vw;  */
+  }
+  .profile-pic-container {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    width: 100%; /* Ensure the container takes full width */
+    height: 55vh; /* Adjust height as needed */
+    margin-top: 10vw; 
   }  
 }
 
