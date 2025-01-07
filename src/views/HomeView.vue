@@ -18,14 +18,6 @@ import TheWelcome from '../components/TheWelcome.vue'
 <style>
 
 
-.profile-pic-container {
-  display: flex;
-  justify-content: center; /* Centers the image horizontally */
-  align-items: center; /* Centers the image vertically */
-  width: 100%; /* Ensure the container takes full width */
-  height: 55vh; /* Adjust height as needed */
-  /* margin-top: 10vw;  */
-}
 
 .profile-pic-home {
   width: 70vw;  /* Adjust width dynamically based on the screen */
@@ -34,16 +26,49 @@ import TheWelcome from '../components/TheWelcome.vue'
   border-radius: 50%; /* Make the profile picture circular */
 }
 
-@media (max-width: 1024px){
+@media (max-width: 768px){
   .introduction {
     display: flex;
     align-items: center;
     justify-content: center; /* Center text horizontally if needed */
+    font-family:"Sour Gummy", "Garamond", 'Franklin Gothic', sans-serif;
     font-size: 25px;
     padding: 20px; /* Add some padding to ensure text doesn't touch edges */
     flex-direction: column; /* Make text stack vertically */
-    margin-bottom: 15vw; /* Add space below the introduction section */
+    /* margin-bottom: 5vw;  */
   }
+  .profile-pic-container {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    width: 100%; /* Ensure the container takes full width */
+    height: 55vh; /* Adjust height as needed */
+    margin-top: -10vw; 
+  }  
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .introduction {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally if needed */
+    font-family:"Sour Gummy", "Garamond", 'Franklin Gothic', sans-serif;
+    font-size: 25px;
+    padding: 20px; /* Add some padding to ensure text doesn't touch edges */
+    flex-direction: column; /* Make text stack vertically */
+    /* margin-bottom: 5vw;  */
+  }
+  .profile-pic-container {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    width: 100%; /* Ensure the container takes full width */
+    height: 55vh; /* Adjust height as needed */
+    margin-top: 15vw; 
+  }
+
 }
 
 @media (min-width: 1024px){
@@ -62,6 +87,7 @@ import TheWelcome from '../components/TheWelcome.vue'
     text-align: center; /* Center the text content horizontally */
     margin-bottom: 5vw; /* Adds space below the introduction section */
   }
+
 
 }
 </style>
