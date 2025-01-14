@@ -1,16 +1,29 @@
 <script setup>
+import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+// onMounted(() => {
+//   const videoElement = document.querySelector('video');
+//   if (videoElement) {
+//     videoElement.play();
+//   }
+// });
 </script>
 
 <template>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Background Video -->
+  <div class="video-container">
+    <video autoplay loop muted playsinline width="100%" height="100%" style="object-fit: cover;">
+    <source src="@/assets/background_video.mp4" type="video/mp4" />
+    </video>
+  </div>
 
   <header>
-
-    
     <div class="wrapper">
       <!-- <HelloWorld msg="You did it!" /> -->
       <div>
@@ -18,7 +31,6 @@ import HelloWorld from './components/HelloWorld.vue'
         <text class="styled-text">Welcome to my portfolio app!</text>
       </div>
       
-
       <nav>
         <ul>
           <li>
@@ -26,32 +38,25 @@ import HelloWorld from './components/HelloWorld.vue'
               Home
               <img src="@/assets/home.svg" alt="Home" class="icon" />
             </RouterLink>
-            
           </li>
           <li>
             <RouterLink to="/about">
-               About
+              About
               <img src="@/assets/profile-2.svg" alt="About" class="icon" />
             </RouterLink>
-            
           </li>
-
           <li>
             <RouterLink to="/projects">
               Projects
               <img src="@/assets/folder.svg" alt="Projects" class="icon" />
             </RouterLink>
-            
           </li>
-
           <li>
             <RouterLink to="/interests">
               Interests
               <img src="@/assets/music.svg" alt="Interests" class="icon" />
             </RouterLink>
-            
           </li>
-
         </ul>
       </nav>
     </div>
@@ -60,14 +65,40 @@ import HelloWorld from './components/HelloWorld.vue'
   <Transition name="fade" mode="out-in">
     <RouterView class="router-view"/>
   </Transition>
-
-  
 </template>
 
 <style scoped>
-.router-view{
+/* Background Video Styling */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 Aspect Ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 Aspect Ratio */
+  transform: translate(-50%, -50%);
+}
+
+.video-container video {
+  opacity: 0.7; /* Adjust this value as needed */
+}
+
+.router-view {
   font-family: "Sour Gummy", serif;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 2s ease;
@@ -84,12 +115,7 @@ import HelloWorld from './components/HelloWorld.vue'
   color: green;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
   .profile-pic {
     display: none;
   }
@@ -100,30 +126,21 @@ import HelloWorld from './components/HelloWorld.vue'
     height: 2rem;
     width: auto;
   }
-
-  router-view {
-    display: block;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: fit-content;    
-  }
-
-  /* Make nav items appear in a row */
+  
   nav ul {
     display: flex;
-    flex-direction: row; /* Set flex direction to row for smaller screens */
+    flex-direction: row;
     padding: 0;
     margin: 0;
-    list-style-type: none; /* Remove bullet points */
-    justify-content: center; /* Center the items horizontally */
+    list-style-type: none;
+    justify-content: center;
   }
 
   nav li {
-    display: inline-block; /* Align items in a row */
-    margin-right: 2rem; /* Add spacing between items */
+    display: inline-block;
+    margin-right: 2rem;
   }
 
-  /* Optional: Adjust icon size for smaller screens */
   nav .icon {
     width: 30px;
     height: 30px;
@@ -139,17 +156,11 @@ import HelloWorld from './components/HelloWorld.vue'
   }
 
   .profile-pic {
-  width: 400px; /* Set a fixed width */
-  height: 400px; /* Set the same height to make it square */
-  border: 5px solid green;
-  border-radius: 20px;
-  object-fit: cover; /* This ensures the image covers the square and gets cropped */
-  }
-
-
-
-  .logo {
-    margin: 0 2rem 0 0;
+    width: 400px;
+    height: 400px;
+    border: 5px solid green;
+    border-radius: 20px;
+    object-fit: cover;
   }
 
   header .wrapper {
@@ -185,24 +196,5 @@ import HelloWorld from './components/HelloWorld.vue'
     height: 40px;
     margin-left: 0.5rem;
   }
-
-  nav a.router-link-exact-active {
-    color: var(--color-text);
-  }
-
-  nav a.router-link-exact-active:hover {
-    background-color: transparent;
-  }
-
-  nav a {
-    display: inline-block;
-    padding: 0 2rem;
-    border-left: 1px solid var(--color-border);
-  }
-
-  nav a:first-of-type {
-    border: 0;
-  }
 }
 </style>
-
